@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+.container-fluid{
+    background: linear-gradient(90deg, #007E94 50%, #F5F5F5 50% );
+    font-family: 'Roboto', sans-serif;
+    
+}
+h3{
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+h3.form-heading{
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: normal;
+}
+div.row{
+    height: 100vh;
+}
+.layer{
+    display: absolute;
+    width: 1308px;
+    height: 756px;
+    left: 76px;
+    top: 113px;
+}
+
+img{
+width: 250px;
+height: 250px;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+form{
+    margin-left: 60px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-family: 'Mulish', sans-serif;
+}
+
+input.text{
+    width: 500px;
+}
+
+button{
+    background-color: #007E94 ;
+    width: 500px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+button.google-button {
+    background-color: #233142;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.layer{
+    position: absolute;
+    left: 106px;
+    top: 50px;
+    width: 1325px;
+    height: 650px;
+    background-color: none;
+    border: 15px solid rgba(255, 255, 255, 0.23);
+    box-shadow: 7px 14px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 52px;
+}
+
+.stack-top{
+    z-index: 7;
+}

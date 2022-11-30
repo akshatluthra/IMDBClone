@@ -1,0 +1,20 @@
+<ngx-spinner
+bdColor="#F7F7F7"
+template="<img src='https://i.giphy.com/media/YOw8mpVUyG8RIyR4uM/giphy.webp' />">
+</ngx-spinner>
+<app-carousel-component></app-carousel-component>
+<ul>
+  <li *ngFor="let movie of MovieData;">
+    <a routerLink = "/movie/{{movie.id}}">
+      <img [src]="movie.thumb" alt="movie thumbnail">
+      <div class="content">
+        <div class="name">
+          {{movie.title}}
+        </div>
+        <span class="favorite">❤</span>
+        <button class="btn btn-dark mt-2"><fa-icon [icon]="faCircle"></fa-icon> Watch Trailer</button>
+      </div>
+     
+    </a>
+  </li>
+</ul>
