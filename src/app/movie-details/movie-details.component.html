@@ -1,11 +1,9 @@
 <div class="container">
-    <div class = "main-section">
-    <h1 class="mb-2 mt-5">{{movieDetailing.title}}</h1>
-    <video width="800" height="440" controls>
-        <source [src]="movieDetailing.sources" type="video/mp4">
-        <source [src]="movieDetailing.sources" type="video/ogg">
-        Your browser does not support the video tag.
-      </video>
-      <button class="mt-5 btn btn-dark" [routerLink]="['']">Go Back</button>
-    </div>
+  <div class = "main-section">
+  <h1 class="mb-2 mt-5">{{movieDetailing?.title}}</h1>
+  <video width="800" height="440" autoplay [src]="this.movieDetailing?.sources[0]" controls loop>
+    Your browser does not support the video tag.
+</video>
+    <button class="mt-5 btn btn-dark" [routerLink]="['']">Go Back</button>
+  </div>
 </div>

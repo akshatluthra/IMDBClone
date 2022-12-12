@@ -24,7 +24,7 @@
           "title": "Elephant Dream",
           "favourite": "no",
           "rating": 3.8
-          
+
         },
         {
           "id": 3,
@@ -159,6 +159,6 @@
           "favourite": "yes",
           "rating": 4.9
         }
-      
+
   ]
 }

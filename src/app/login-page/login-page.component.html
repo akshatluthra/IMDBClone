@@ -3,27 +3,29 @@
   
   <div class="row">
     
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex flex-column align-items-center justify-content-center mt-5 stack-top">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex flex-column align-items-center justify-content-center mt-5 stack-top left-side">
     <img class="" src="../assets/images/connection.png">
     <h3 class="mt-5 text-light">Connect with your <br> friends and family</h3>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p-4 stack-top">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p-4 stack-top right-side">
       
       <form [formGroup]="loginDetailsGroup">
         <div class="form-group mb-3">
           <h3 class="mb-5 form-heading">Login to your Account</h3>
           <label for="exampleInputEmail1">Email address</label>
           <input formControlName="email" type="email" class="form-control text" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+          <span class="text-danger" *ngIf="requiredError('email')">Please Enter your Email Address</span>
         </div>
         <div class="form-group mb-3">
           <label for="exampleInputPassword1">Password</label>
           <input formControlName="password" type="password" class="form-control text" id="exampleInputPassword1" placeholder="Password">
+          <span class="text-danger" *ngIf="requiredError('password')">Please Enter your password</span>
         </div>
         <div class="form-group form-check mt-4">
-          <input formControlName="remember" type="checkbox" class="form-check-input" id="exampleCheck1">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">REMEMBER ME</label>
         </div>
-        <button type="submit" class="btn d-block mt-4 mb-2" (click)="onSubmit()">SIGN IN</button>
+        <button [disabled]="this.loginDetailsGroup.invalid" (click)="onSubmit()" type="submit" class="btn d-block mt-4 mb-2">SIGN IN</button>
         <button type="button" class="btn d-block google-button mt-4 mb-4"><img class="icon" src="../assets/images/google-icon.png"> Continue with Google</button>
         <p class="text-center">Don't have an account <a href="#">Sign Up</a></p>
       </form>

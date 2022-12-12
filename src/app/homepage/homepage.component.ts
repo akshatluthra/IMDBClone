@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { MoviesService } from '../services/movies/movies.service';
 import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -15,7 +16,7 @@ export class HomepageComponent implements OnInit {
   MovieData: any;
   subsription!:Subscription; 
 
-  constructor(private apiData: MoviesService, private loader: NgxSpinnerService) { }
+  constructor(private apiData: MoviesService, private loader: NgxSpinnerService, private router: Router) { }
 
   ngOnInit(): void {
     this.loader.show();
@@ -32,6 +33,11 @@ export class HomepageComponent implements OnInit {
     })
   },5000)
   }
+
+  routeToPlayer(id: number) {
+    this.router.navigate(['movie', id]);
+  }
+
   // ngOnDestroy(): void{
   //   this.subsription.unsubscribe();
   // }

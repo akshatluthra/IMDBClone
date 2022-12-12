@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -8,20 +9,33 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
 
-  loginDetailsGroup!: FormGroup
+  loginDetailsGroup!: FormGroup;
+  formSubmitAttempt = false;
 
-  constructor(private form: FormBuilder) { }
+  constructor(private form: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.loginDetailsGroup = this.form.group({
-      email: [],
-      password: [],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
       remember: []
     })
   }
 
+  requiredError(control:string){
+    if((this.loginDetailsGroup.controls[control].touched && this.loginDetailsGroup.controls[control].invalid) || (this.formSubmitAttempt && this.loginDetailsGroup.controls[control].invalid)){
+      return true;
+    }
+    return false;
+  }
+
   onSubmit() {
-    console.log(this.loginDetailsGroup.value);
+    this.formSubmitAttempt = true;
+    if (this.loginDetailsGroup.valid) {
+      alert("Welcome Back, You logined successfully");
+      this.router.navigate(['']);
+    }
+    // console.log(this.loginDetailsGroup.value);
   }
 
 }
