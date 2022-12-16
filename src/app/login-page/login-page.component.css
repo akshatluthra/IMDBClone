@@ -82,6 +82,18 @@ a{
     z-index: 7;
 }
 
+.password-icon{
+    position: relative;
+    left:95%;
+}
+
+.eye-icon{
+    position: absolute;
+    right: 5%;
+    bottom: 100%;
+}
+
+
 @media screen and (max-width: 480px) {
     /* .container-fluid{
         background: linear-gradient(180deg, #007E94 75%, #F5F5F5 60% );

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +12,8 @@ export class LoginPageComponent implements OnInit {
 
   loginDetailsGroup!: FormGroup;
   formSubmitAttempt = false;
+  visible:boolean = false;
+  eyeIcon = faEye;
 
   constructor(private form: FormBuilder, private router: Router) { }
 
@@ -36,6 +39,14 @@ export class LoginPageComponent implements OnInit {
       this.router.navigate(['']);
     }
     // console.log(this.loginDetailsGroup.value);
+  }
+
+  isVisible(){
+    this.visible = !this.visible;
+  }
+
+  SeekPassword(){
+    return(this.visible ? 'text': 'password')
   }
 
 }
